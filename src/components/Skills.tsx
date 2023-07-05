@@ -5,6 +5,8 @@ import {
   MdMiscellaneousServices,
 } from "react-icons/md";
 import { AiFillDatabase } from "react-icons/ai";
+import { skills } from "./skillset";
+import Skill from "./Skill";
 
 enum DropdownType {
   FRONTEND = "frontend",
@@ -58,7 +60,7 @@ const Skills = () => {
       <h1 className="text-xl md:text-2xl lg:text-4xl font-semibold text-blue-500">
         Skills
       </h1>
-      <p className="text-gray-400">My technical skills</p>
+      <p className="text-gray-400">My technical skills.</p>
       <div className="flex flex-col w-full xl:w-[55vw] mt-8">
         <section className="w-full">
           <div className="w-full flex justify-between items-center">
@@ -75,7 +77,14 @@ const Skills = () => {
               onClick={() => handleDropdownClick(DropdownType.FRONTEND)}
             />
           </div>
-          {dropdown.frontend && <h1>Hello frontend</h1>}
+
+          {dropdown.frontend && (
+            <div className="p-5 w-full flex flex-col gap-y-5">
+              {skills.frontend.map((skill) => (
+                <Skill skill={skill} />
+              ))}
+            </div>
+          )}
         </section>
         <section className="w-full mt-8">
           <div className="w-full flex justify-between items-center">
@@ -92,7 +101,13 @@ const Skills = () => {
               onClick={() => handleDropdownClick(DropdownType.BACKEND)}
             />
           </div>
-          {dropdown.backend && <h1>Hello backend</h1>}
+          {dropdown.backend && (
+            <div className="p-5 w-full flex flex-col gap-y-5">
+              {skills.backend.map((skill) => (
+                <Skill skill={skill} />
+              ))}
+            </div>
+          )}
         </section>
         <section className="w-full mt-8">
           <div className="w-full flex justify-between items-center">
@@ -109,7 +124,13 @@ const Skills = () => {
               onClick={() => handleDropdownClick(DropdownType.MISCELLANEOUS)}
             />
           </div>
-          {dropdown.miscellaneous && <h1>Hello miscellaneous</h1>}
+          {dropdown.miscellaneous && (
+            <div className="p-5 w-full flex flex-col gap-y-5">
+              {skills.miscellaneous.map((skill) => (
+                <Skill skill={skill} />
+              ))}
+            </div>
+          )}
         </section>
       </div>
     </section>
