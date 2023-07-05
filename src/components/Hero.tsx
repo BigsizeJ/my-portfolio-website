@@ -1,4 +1,3 @@
-import React from "react";
 import picture from "../assets/picture-crop.jpg";
 import { TypeAnimation } from "react-type-animation";
 import { MdEmail } from "react-icons/md";

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { nanoid } from "nanoid";
 import { TbMenu } from "react-icons/tb";
@@ -11,11 +11,6 @@ interface navlinkType {
   link: string;
   type: string;
   active: boolean;
-}
-
-interface Props {
-  hero: RefObject<HTMLDivElement>;
-  about: RefObject<HTMLDivElement>;
 }
 
 const Navbar = () => {
@@ -43,17 +38,6 @@ const Navbar = () => {
       active: false,
     },
   ]);
-
-  const scrollToSection = (section: string) => {
-    switch (section) {
-      case "hero":
-        return refContainer.hero.current.scrollIntoView({ behavior: "smooth" });
-      case "about":
-        return refContainer.about.current.scrollIntoView({
-          behavior: "smooth",
-        });
-    }
-  };
 
   const handleLinkClick = (id: string) => {
     const updateNavlink = navlink.map((link: navlinkType) => {
