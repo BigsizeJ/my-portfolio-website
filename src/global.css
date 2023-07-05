@@ -10,5 +10,5 @@ body {
 .image-ctn {
   border-radius: 51% 49% 50% 50% / 30% 31% 69% 70%;
   /* border-radius: 50%; */
-  @apply object-contain w-[13rem] md:w-[15rem] lg:w-[18rem];
+  @apply object-contain w-[13rem] md:w-[15rem] xl:w-[18rem];
 }

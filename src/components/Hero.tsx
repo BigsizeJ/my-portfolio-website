@@ -7,7 +7,7 @@ import { FaLinkedin, FaGithub, FaDiscord } from "react-icons/fa";
 const Hero = () => {
   return (
     <section className="w-full flex justify-center py-[4rem] md:py-[8rem]">
-      <div className="relative lg:w-[60vw] flex flex-col md:px-4  md:flex-row justify-center gap-y-4 md:gap-y-0 gap-x-8 items-center">
+      <div className="relative  lg:w-full flex flex-col md:px-4  md:flex-row justify-center gap-y-4 md:gap-y-0 gap-x-8 items-center">
         {/* /// contact list for lg device */}
         <section className="hidden xl:flex absolute left-0 text-blue-500 flex-col h-full justify-center gap-y-8">
           <a

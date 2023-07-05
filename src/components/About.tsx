@@ -42,7 +42,7 @@ const About = () => {
           </div>
           <div className="col-span-4 flex items-center justify-center">
             <button className="flex items-center p-3 md:p-4 text-sm font-bold text-white gap-x-2 bg-blue-500 hover:bg-blue-600 rounded-md">
-              Download Resume{" "}
+              Download Resume
               <AiOutlineDownload className="text-xl md:text-2xl" />
             </button>
           </div>
