@@ -19,13 +19,13 @@ const PercentToWord = ({ percent }: { percent: string }) => {
   } else if (intPercent >= 100) {
     percentWord = "Expert";
   }
-  return <p>{percentWord}</p>;
+  return <p className="text-sm md:text-base">{percentWord}</p>;
 };
 
 const Skill = ({ skill }: Props) => {
   return (
     <div className="w-full">
-      <div className="flex justify-between font-[500]">
+      <div className="flex justify-between font-[500] items-center">
         <p>{skill.label}</p>
         <PercentToWord percent={skill.percent} />
       </div>

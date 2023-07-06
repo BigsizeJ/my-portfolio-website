@@ -12,3 +12,11 @@ body {
   /* border-radius: 50%; */
   @apply object-contain w-[13rem] md:w-[15rem] xl:w-[18rem];
 }
+
+.section-header {
+  @apply text-xl md:text-2xl lg:text-4xl font-semibold text-blue-500;
+}
+
+.skill-header {
+  @apply flex items-center gap-x-3 font-bold text-base  md:text-xl;
+}

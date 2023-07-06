@@ -1,11 +1,10 @@
 import { AiOutlineDownload } from "react-icons/ai";
+import resume from "../assets/Apac Resume.pdf";
 
 const About = () => {
   return (
     <section className="w-full flex flex-col items-center justify-center">
-      <h1 className="text-xl md:text-2xl lg:text-4xl font-semibold text-blue-500">
-        About Me
-      </h1>
+      <h1 className="section-header">About Me</h1>
       <p className="text-gray-400">Let me introduce myself.</p>
 
       <div className="mt-8 w-full xl:w-[55vw] text-justify text-gray-700">
@@ -40,10 +39,14 @@ const About = () => {
             </p>
           </div>
           <div className="col-span-4 flex items-center justify-center">
-            <button className="flex items-center p-3 md:p-4 text-sm font-bold text-white gap-x-2 bg-blue-500 hover:bg-blue-600 rounded-md">
+            <a
+              href={resume}
+              download={true}
+              className="flex items-center p-3 md:p-4 text-sm font-bold text-white gap-x-2 bg-blue-500 hover:bg-blue-600 rounded-md"
+            >
               Download Resume
               <AiOutlineDownload className="text-xl md:text-2xl" />
-            </button>
+            </a>
           </div>
         </div>
       </div>

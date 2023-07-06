@@ -57,14 +57,12 @@ const Skills = () => {
 
   return (
     <section className="w-full flex flex-col items-center mt-20">
-      <h1 className="text-xl md:text-2xl lg:text-4xl font-semibold text-blue-500">
-        Skills
-      </h1>
+      <h1 className="section-header">Skills</h1>
       <p className="text-gray-400">My technical skills.</p>
       <div className="flex flex-col w-full xl:w-[55vw] mt-8">
         <section className="w-full">
           <div className="w-full flex justify-between items-center">
-            <h1 className="flex items-center gap-x-3 font-bold text-base md:text-xl">
+            <h1 className="skill-header">
               <span>
                 <PiBracketsCurlyBold className="text-blue-500 text-2xl" />
               </span>
@@ -88,7 +86,7 @@ const Skills = () => {
         </section>
         <section className="w-full mt-8">
           <div className="w-full flex justify-between items-center">
-            <h1 className="flex items-center gap-x-3 font-bold textbase  md:text-xl">
+            <h1 className="skill-header">
               <span>
                 <AiFillDatabase className="text-blue-500 text-2xl" />
               </span>
@@ -111,7 +109,7 @@ const Skills = () => {
         </section>
         <section className="w-full mt-8">
           <div className="w-full flex justify-between items-center">
-            <h1 className="flex items-center gap-x-3 font-bold textbase  md:text-xl">
+            <h1 className="skill-header">
               <span>
                 <MdMiscellaneousServices className="text-blue-500 text-2xl" />
               </span>
