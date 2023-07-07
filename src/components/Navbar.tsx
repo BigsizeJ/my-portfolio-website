@@ -1,7 +1,6 @@
 import { Dispatch, SetStateAction, useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { nanoid } from "nanoid";
-import { TbMenu } from "react-icons/tb";
 import { FaSun, FaMoon } from "react-icons/fa";
 
 interface Props {
@@ -44,6 +43,13 @@ const Navbar = () => {
       type: "skill",
       active: false,
     },
+    {
+      id: nanoid(),
+      label: "Projects",
+      link: "#projects",
+      type: "project",
+      active: false,
+    },
   ]);
 
   useEffect(() => {
@@ -61,7 +67,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="flex w-full justify-between items-center sticky py-2 top-0 z-50">
+    <nav className={`nav ${isNavOpen ? "open" : "close"}`}>
       <h1 className="font-[500] dark:text-gray-200">Jessie Apac</h1>
       <nav className="gap-x-4 hidden md:flex items-center">
         {navlink &&
@@ -77,7 +83,7 @@ const Navbar = () => {
               {link.label}
             </NavLink>
           ))}
-        <div
+        <button
           className="text-xl flex cursor-pointer justify-center items-center relative overflow-y-hidden"
           onClick={() => setIsDark((prev) => !prev)}
         >
@@ -91,13 +97,8 @@ const Navbar = () => {
               isDark ? "translate-y-0" : "-translate-y-8"
             } transition-transform duration-200 transition-color dark:text-[#D3D3D3]`}
           />
-        </div>
+        </button>
       </nav>
-      {/* 
-      <TbMenu
-        className="flex md:hidden text-black text-3xl mb-2 z-50 relative"
-        onClick={() => setIsNavOpen((prev) => !prev)}
-      /> */}
 
       <button
         className={`hamburger-button ${isNavOpen ? "open" : ""}`}
@@ -107,27 +108,38 @@ const Navbar = () => {
         <span className="line"></span>
       </button>
 
-      {/* <nav
-        className={`${
-          isNavOpen
-            ? "w-screen h-screen inset-0 m-auto bg-blue-500"
-            : "w-20 h-20 bg-transparent rounded-full inset-0 m-auto"
-        } gap-x-4  md:hidden fixed   z-20 transition-[width_height_scale] duration-200`}
-      >
+      <nav className={`${isNavOpen ? "open" : "close"} hamburger-menu`}>
         {navlink &&
-            navlink.map((link: navlinkType) => (
-              <NavLink
-                key={nanoid()}
-                to={link.link}
-                className={`${
-                  link.active ? "text-blue-500" : "text-black"
-                } font-[500]`}
-                onClick={() => handleLinkClick(link.id)}
-              >
-                {link.label}
-              </NavLink>
-            ))}
-      </nav> */}
+          navlink.map((link: navlinkType) => (
+            <NavLink
+              key={nanoid()}
+              to={link.link}
+              className={`${
+                link.active
+                  ? "text-blue-800 dark:text-blue-400"
+                  : "text-white dark:text-gray-200"
+              } font-[500]`}
+              onClick={() => handleLinkClick(link.id)}
+            >
+              {link.label}
+            </NavLink>
+          ))}
+        <button
+          className="text-3xl mt-5 flex cursor-pointer justify-center items-center relative overflow-y-hidden"
+          onClick={() => setIsDark((prev) => !prev)}
+        >
+          <FaSun
+            className={`${
+              isDark ? "translate-y-10" : "translate-y-0"
+            } transition-transform duration-200 absolute text-[#FFA500]`}
+          />
+          <FaMoon
+            className={`${
+              isDark ? "translate-y-0" : "-translate-y-10"
+            } transition-transform duration-200 transition-color dark:text-[#D3D3D3]`}
+          />
+        </button>
+      </nav>
     </nav>
   );
 };
