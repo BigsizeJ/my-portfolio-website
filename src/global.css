@@ -4,7 +4,11 @@
 
 body {
   scroll-behavior: smooth;
-  @apply px-5 py-3 lg:px-[10rem] xl:px-[15rem] lg:py-[.5rem] font-Inter;
+}
+
+.app {
+  @apply dark:bg-slate-900 px-5 py-3 lg:px-[10rem] 
+  xl:px-[15rem] lg:py-[.5rem] font-Inter transition duration-500;
 }
 
 .image-ctn {
@@ -17,6 +21,10 @@ body {
   @apply text-xl md:text-2xl lg:text-4xl font-semibold text-blue-500;
 }
 
+.section-p {
+  @apply text-gray-400 dark:text-gray-500;
+}
+
 .skill-header {
-  @apply flex items-center gap-x-3 font-bold text-base  md:text-xl;
+  @apply dark:text-gray-200 flex items-center gap-x-3 font-bold text-base  md:text-xl;
 }

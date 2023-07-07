@@ -5,9 +5,9 @@ const About = () => {
   return (
     <section className="w-full flex flex-col items-center justify-center">
       <h1 className="section-header">About Me</h1>
-      <p className="text-gray-400">Let me introduce myself.</p>
+      <p className="section-p">Let me introduce myself.</p>
 
-      <div className="mt-8 w-full xl:w-[55vw] text-justify text-gray-700">
+      <div className="mt-8 w-full xl:w-[55vw] text-justify text-gray-700 dark:text-gray-200">
         <p>
           Hello! I'm Jessie Apac, an aspiring Web Developer. I have been
           continuously enhancing my skills and exploring various programming

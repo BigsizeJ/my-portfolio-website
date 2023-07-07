@@ -24,7 +24,7 @@ const PercentToWord = ({ percent }: { percent: string }) => {
 
 const Skill = ({ skill }: Props) => {
   return (
-    <div className="w-full">
+    <div className="w-full dark:text-gray-200">
       <div className="flex justify-between font-[500] items-center">
         <p>{skill.label}</p>
         <PercentToWord percent={skill.percent} />

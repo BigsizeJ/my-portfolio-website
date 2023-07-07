@@ -58,7 +58,7 @@ const Skills = () => {
   return (
     <section className="w-full flex flex-col items-center mt-20">
       <h1 className="section-header">Skills</h1>
-      <p className="text-gray-400">My technical skills.</p>
+      <p className="section-p">My technical skills.</p>
       <div className="flex flex-col w-full xl:w-[55vw] mt-8">
         <section className="w-full">
           <div className="w-full flex justify-between items-center">
