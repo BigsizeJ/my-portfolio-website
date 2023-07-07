@@ -2,7 +2,7 @@ import "./anim.css";
 
 const BackgroundAnimation = () => {
   return (
-    <div className="area">
+    <>
       <ul className="circles">
         <li></li>
         <li></li>
@@ -15,7 +15,7 @@ const BackgroundAnimation = () => {
         <li></li>
         <li></li>
       </ul>
-    </div>
+    </>
   );
 };
 

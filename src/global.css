@@ -8,7 +8,7 @@ body {
 
 .app {
   @apply dark:bg-slate-900 px-5 py-3 lg:px-[10rem] 
-  xl:px-[15rem] lg:py-[.5rem] font-Inter transition duration-500;
+  xl:px-[15rem] lg:py-[.5rem] font-Inter transition duration-500 relative;
 }
 
 .image-ctn {

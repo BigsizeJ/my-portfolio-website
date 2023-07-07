@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction, useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { nanoid } from "nanoid";
 import { TbMenu } from "react-icons/tb";
@@ -17,8 +17,10 @@ interface navlinkType {
   active: boolean;
 }
 
-const Navbar = ({ isDark, setIsDark }: Props) => {
+const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState<boolean>(false);
+  const [isDark, setIsDark] = useState<boolean>(false);
+
   const [navlink, setNavlink] = useState<navlinkType[]>([
     {
       id: nanoid(),
@@ -43,6 +45,12 @@ const Navbar = ({ isDark, setIsDark }: Props) => {
       active: false,
     },
   ]);
+
+  useEffect(() => {
+    return isDark
+      ? document.body.classList.add("dark")
+      : document.body.classList.remove("dark");
+  }, [isDark]);
 
   const handleLinkClick = (id: string) => {
     const updateNavlink = navlink.map((link: navlinkType) => {

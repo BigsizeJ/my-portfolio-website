@@ -9,7 +9,6 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
-  z-index: -1;
 }
 
 .circles li {
@@ -21,6 +20,7 @@
   animation: animate 25s linear infinite;
   bottom: -150px;
   @apply bg-blue-200 dark:bg-blue-500;
+  z-index: -20;
 }
 
 .circles li:nth-child(1) {
@@ -106,7 +106,7 @@
   }
 
   100% {
-    transform: translateY(-1000px) rotate(720deg);
+    transform: translateY(-500px) rotate(720deg);
     opacity: 0;
     border-radius: 50%;
   }
