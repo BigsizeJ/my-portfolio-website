@@ -48,8 +48,8 @@ const Navbar = () => {
 
   useEffect(() => {
     return isDark
-      ? document.body.classList.add("dark")
-      : document.body.classList.remove("dark");
+      ? document.querySelector("#root")?.classList.add("dark")
+      : document.querySelector("#root")?.classList.remove("dark");
   }, [isDark]);
 
   const handleLinkClick = (id: string) => {
@@ -93,20 +93,28 @@ const Navbar = () => {
           />
         </div>
       </nav>
-
+      {/* 
       <TbMenu
         className="flex md:hidden text-black text-3xl mb-2 z-50 relative"
         onClick={() => setIsNavOpen((prev) => !prev)}
-      />
+      /> */}
 
-      <nav
+      <button
+        className={`hamburger-button ${isNavOpen ? "open" : ""}`}
+        onClick={() => setIsNavOpen((prev) => !prev)}
+      >
+        <span className="line"></span>
+        <span className="line"></span>
+      </button>
+
+      {/* <nav
         className={`${
           isNavOpen
             ? "w-screen h-screen inset-0 m-auto bg-blue-500"
             : "w-20 h-20 bg-transparent rounded-full inset-0 m-auto"
         } gap-x-4  md:hidden fixed   z-20 transition-[width_height_scale] duration-200`}
       >
-        {/* {navlink &&
+        {navlink &&
             navlink.map((link: navlinkType) => (
               <NavLink
                 key={nanoid()}
@@ -118,8 +126,8 @@ const Navbar = () => {
               >
                 {link.label}
               </NavLink>
-            ))} */}
-      </nav>
+            ))}
+      </nav> */}
     </nav>
   );
 };

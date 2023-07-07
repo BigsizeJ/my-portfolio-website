@@ -7,7 +7,7 @@ const About = () => {
       <h1 className="section-header">About Me</h1>
       <p className="section-p">Let me introduce myself.</p>
 
-      <div className="mt-8 w-full xl:w-[55vw] text-justify text-gray-700 dark:text-gray-200">
+      <div className="mt-8 w-full xl:w-[55vw] text-justify text-gray-700 dark:text-gray-300">
         <p>
           Hello! I'm Jessie Apac, an aspiring Web Developer. I have been
           continuously enhancing my skills and exploring various programming

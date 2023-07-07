@@ -8,13 +8,12 @@ import BackgroundAnimation from "./components/BackgroundAnimation";
 const App = () => {
   return (
     <section className="app">
-      <BackgroundAnimation />
-
       <Navbar />
       <Hero />
       <About />
       <Skills />
       <Projects />
+      <BackgroundAnimation />
     </section>
   );
 };

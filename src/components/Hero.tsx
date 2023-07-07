@@ -34,10 +34,10 @@ const Hero = () => {
             wrapper="span"
             className="text-3xl md:text-4xl text-blue-500 font-bold"
           />
-          <p className="text-lg lg:text-xl text-gray-900 dark:text-gray-300">
+          <p className="text-lg lg:text-xl text-gray-900 dark:text-gray-200">
             My name is Jessie, nice to meet you
           </p>
-          <p className="text-base text-gray-500 dark:text-gray-400">
+          <p className="text-base text-gray-500 dark:text-gray-300">
             I'm a upcoming fourth-year Computer Science student at the Lyceum of
             Alabang. I am interested in web development, designing websites, AI,
             and overall enjoy development of any sort.

@@ -31,7 +31,7 @@ const Skill = ({ skill }: Props) => {
       </div>
       <div className="w-full h-2 bg-blue-200 rounded-full relative">
         <span
-          className=" bg-blue-500 h-2 absolute rounded-full"
+          className=" bg-blue-500 dark:bg-blue-600 h-2 absolute rounded-full"
           style={{ width: `${skill.percent}%` }}
         ></span>
       </div>
