@@ -3,11 +3,6 @@ import { NavLink } from "react-router-dom";
 import { nanoid } from "nanoid";
 import { FaSun, FaMoon } from "react-icons/fa";
 
-interface Props {
-  isDark: boolean;
-  setIsDark: Dispatch<SetStateAction<boolean>>;
-}
-
 interface navlinkType {
   id: string;
   label: string;
