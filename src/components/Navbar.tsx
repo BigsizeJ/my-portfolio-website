@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { nanoid } from "nanoid";
 import { FaSun, FaMoon } from "react-icons/fa";
