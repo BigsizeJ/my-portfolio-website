@@ -16,7 +16,8 @@ body {
 }
 
 .nav {
-  @apply flex w-full justify-between items-center sticky py-3 top-0 z-50 bg-white dark:bg-slate-900;
+  @apply flex w-full justify-between items-center sticky py-3 top-0 z-50 bg-white
+   dark:bg-slate-900 transition-[background] duration-500;
 }
 
 .nav h1 {
@@ -63,6 +64,12 @@ body {
 
 .skill-header {
   @apply dark:text-gray-200 flex items-center gap-x-3 font-bold text-base  md:text-xl;
+}
+
+/* theme button */
+.theme-btn {
+  @apply flex cursor-pointer justify-center items-center 
+  relative overflow-y-hidden;
 }
 
 /* hamburger  button */

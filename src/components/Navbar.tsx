@@ -58,9 +58,18 @@ const Navbar = ({ section }: Prop) => {
   ]);
 
   useEffect(() => {
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      document.documentElement.classList.add("dark");
+      setIsDark(true);
+    }
+
+    return;
+  }, []);
+
+  useEffect(() => {
     return isDark
-      ? document.querySelector("#root")?.classList.add("dark")
-      : document.querySelector("#root")?.classList.remove("dark");
+      ? document.documentElement.classList.add("dark")
+      : document.documentElement.classList.remove("dark");
   }, [isDark]);
 
   const handleLinkClick = (id: string, type: string) => {
@@ -100,7 +109,7 @@ const Navbar = ({ section }: Prop) => {
             </NavLink>
           ))}
         <button
-          className="text-xl flex cursor-pointer justify-center items-center relative overflow-y-hidden"
+          className="theme-btn text-xl"
           onClick={() => setIsDark((prev) => !prev)}
         >
           <FaSun
@@ -141,7 +150,7 @@ const Navbar = ({ section }: Prop) => {
             </NavLink>
           ))}
         <button
-          className="text-3xl mt-5 flex cursor-pointer justify-center items-center relative overflow-y-hidden"
+          className="theme-btn text-3xl mt-5"
           onClick={() => setIsDark((prev) => !prev)}
         >
           <FaSun
