@@ -1,9 +1,13 @@
 import { AiOutlineDownload } from "react-icons/ai";
 import resume from "../assets/Apac Resume.pdf";
+import { RefObject } from "react";
 
-const About = () => {
+const About = ({ reference }: { reference: RefObject<HTMLDivElement> }) => {
   return (
-    <section className="w-full flex flex-col items-center justify-center">
+    <section
+      className="w-full flex flex-col items-center justify-center"
+      ref={reference}
+    >
       <h1 className="section-header">About Me</h1>
       <p className="section-p">Let me introduce myself.</p>
 

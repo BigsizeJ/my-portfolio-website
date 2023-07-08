@@ -2,10 +2,14 @@ import picture from "../assets/picture-crop.jpg";
 import { TypeAnimation } from "react-type-animation";
 import { MdEmail } from "react-icons/md";
 import { FaLinkedin, FaGithub, FaDiscord } from "react-icons/fa";
+import { RefObject } from "react";
 
-const Hero = () => {
+const Hero = ({ reference }: { reference: RefObject<HTMLDivElement> }) => {
   return (
-    <section className="w-full flex justify-center py-[4rem] md:py-[8rem]">
+    <section
+      className="w-full flex justify-center py-[4rem] md:py-[8rem]"
+      ref={reference}
+    >
       <div className="relative  lg:w-full flex flex-col md:px-4  md:flex-row justify-center gap-y-4 md:gap-y-0 gap-x-8 items-center">
         {/* /// contact list for lg device */}
         <section className="hidden xl:flex absolute left-0 text-blue-500 flex-col h-full justify-center gap-y-8">

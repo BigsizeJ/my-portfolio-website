@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { RefObject, useState } from "react";
 import { PiBracketsCurlyBold } from "react-icons/pi";
 import {
   MdKeyboardDoubleArrowUp,
@@ -14,7 +14,7 @@ enum DropdownType {
   MISCELLANEOUS = "miscellaneous",
 }
 
-const Skills = () => {
+const Skills = ({ reference }: { reference: RefObject<HTMLDivElement> }) => {
   const [dropdown, setDropdown] = useState<{
     frontend: boolean;
     backend: boolean;
@@ -56,7 +56,10 @@ const Skills = () => {
   };
 
   return (
-    <section className="w-full flex flex-col items-center mt-20">
+    <section
+      className="w-full flex flex-col items-center mt-20"
+      ref={reference}
+    >
       <h1 className="section-header">Skills</h1>
       <p className="section-p">My technical skills.</p>
       <div className="flex flex-col w-full xl:w-[55vw] mt-8">

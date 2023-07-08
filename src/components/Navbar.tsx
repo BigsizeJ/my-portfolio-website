@@ -1,7 +1,16 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, RefObject } from "react";
 import { NavLink } from "react-router-dom";
 import { nanoid } from "nanoid";
 import { FaSun, FaMoon } from "react-icons/fa";
+
+interface Prop {
+  section: {
+    homeRef: RefObject<HTMLDivElement>;
+    aboutRef: RefObject<HTMLDivElement>;
+    skillRef: RefObject<HTMLDivElement>;
+    projectRef: RefObject<HTMLDivElement>;
+  };
+}
 
 interface navlinkType {
   id: string;
@@ -11,7 +20,8 @@ interface navlinkType {
   active: boolean;
 }
 
-const Navbar = () => {
+const Navbar = ({ section }: Prop) => {
+  const { homeRef, aboutRef, skillRef, projectRef } = section;
   const [isNavOpen, setIsNavOpen] = useState<boolean>(false);
   const [isDark, setIsDark] = useState<boolean>(false);
 
@@ -20,7 +30,7 @@ const Navbar = () => {
       id: nanoid(),
       label: "Home",
       link: "#",
-      type: "hero",
+      type: "home",
       active: true,
     },
     {
@@ -53,11 +63,21 @@ const Navbar = () => {
       : document.querySelector("#root")?.classList.remove("dark");
   }, [isDark]);
 
-  const handleLinkClick = (id: string) => {
+  const handleLinkClick = (id: string, type: string) => {
     const updateNavlink = navlink.map((link: navlinkType) => {
       if (link.id === id) return { ...link, active: true };
       return { ...link, active: false };
     });
+    switch (type) {
+      case "home":
+        return homeRef.current?.scrollIntoView({ behavior: "smooth" });
+      case "about":
+        return aboutRef.current?.scrollIntoView({ behavior: "smooth" });
+      case "skill":
+        return skillRef.current?.scrollIntoView({ behavior: "smooth" });
+      case "project":
+        return projectRef.current?.scrollIntoView({ behavior: "smooth" });
+    }
     setNavlink(updateNavlink);
   };
 
@@ -73,7 +93,7 @@ const Navbar = () => {
               className={`${
                 link.active && "!text-blue-500"
               } font-[500] text-black dark:text-gray-200`}
-              onClick={() => handleLinkClick(link.id)}
+              onClick={() => handleLinkClick(link.id, link.type)}
             >
               {link.label}
             </NavLink>
