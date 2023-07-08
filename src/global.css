@@ -25,11 +25,11 @@ body {
 }
 
 .nav.open {
-  @apply !text-white;
+  @apply !text-white md:!text-black;
 }
 
 .nav.open h1 {
-  @apply translate-x-2;
+  @apply translate-x-2 md:translate-x-0;
 }
 
 .nav.close h1 {
