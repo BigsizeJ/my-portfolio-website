@@ -1,4 +1,4 @@
-import { useState, useEffect, RefObject, useRef } from "react";
+import { useState, useEffect, RefObject } from "react";
 import { NavLink } from "react-router-dom";
 import { nanoid } from "nanoid";
 import { FaSun, FaMoon } from "react-icons/fa";
