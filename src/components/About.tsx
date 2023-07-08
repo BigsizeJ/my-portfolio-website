@@ -6,6 +6,7 @@ const About = ({ reference }: { reference: RefObject<HTMLDivElement> }) => {
   return (
     <section
       className="w-full flex flex-col items-center justify-center"
+      id="about"
       ref={reference}
     >
       <h1 className="section-header">About Me</h1>

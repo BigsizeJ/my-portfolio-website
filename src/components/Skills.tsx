@@ -58,6 +58,7 @@ const Skills = ({ reference }: { reference: RefObject<HTMLDivElement> }) => {
   return (
     <section
       className="w-full flex flex-col items-center mt-20"
+      id="skill"
       ref={reference}
     >
       <h1 className="section-header">Skills</h1>

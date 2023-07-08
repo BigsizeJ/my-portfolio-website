@@ -37,7 +37,7 @@ body {
 }
 
 .nav.open .hamburger-button {
-  @apply -translate-x-2 transition duration-200;
+  @apply -translate-x-3 transition duration-200;
 }
 
 .nav.open .hamburger-button span {
@@ -101,7 +101,7 @@ body {
 }
 
 .hamburger-menu.open {
-  @apply max-h-[100rem] pointer-events-auto bg-blue-500 dark:bg-blue-950;
+  @apply max-h-[calc(100%_-_16rem)] pointer-events-auto bg-blue-500 dark:bg-blue-950;
 }
 
 .hamburger-menu.close {

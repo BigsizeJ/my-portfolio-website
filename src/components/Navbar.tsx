@@ -1,4 +1,4 @@
-import { useState, useEffect, RefObject } from "react";
+import { useState, useEffect, RefObject, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import { nanoid } from "nanoid";
 import { FaSun, FaMoon } from "react-icons/fa";
@@ -24,8 +24,9 @@ const Navbar = ({ section }: Prop) => {
   const { homeRef, aboutRef, skillRef, projectRef } = section;
   const [isNavOpen, setIsNavOpen] = useState<boolean>(false);
   const [isDark, setIsDark] = useState<boolean>(false);
+  const [activeLink, setActiveLink] = useState<string>("home");
 
-  const [navlink, setNavlink] = useState<navlinkType[]>([
+  const navlinks = [
     {
       id: nanoid(),
       label: "Home",
@@ -55,7 +56,13 @@ const Navbar = ({ section }: Prop) => {
       type: "project",
       active: false,
     },
-  ]);
+  ];
+
+  const observerOptions = {
+    root: null,
+    rootMargin: "10px",
+    threshold: 0.9,
+  };
 
   useEffect(() => {
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
@@ -72,13 +79,33 @@ const Navbar = ({ section }: Prop) => {
       : document.documentElement.classList.remove("dark");
   }, [isDark]);
 
-  const handleLinkClick = (id: string, type: string) => {
-    const updateNavlink = navlink.map((link: navlinkType) => {
-      if (link.id === id) return { ...link, active: true };
-      return { ...link, active: false };
+  useEffect(() => {
+    const sectionRefs = [homeRef, aboutRef, skillRef, projectRef];
+    const handleIntersection = (entries: any) => {
+      entries.forEach((entry: IntersectionObserverEntry) => {
+        if (entry.isIntersecting) {
+          setActiveLink(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(
+      handleIntersection,
+      observerOptions
+    );
+
+    sectionRefs.forEach((sectionRef) => {
+      if (sectionRef.current) {
+        observer.observe(sectionRef.current);
+      }
     });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const handleLinkClick = (type: string) => {
+    setActiveLink(type);
     setIsNavOpen((prev) => !prev);
-    setNavlink(updateNavlink);
     switch (type) {
       case "home":
         return homeRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -91,27 +118,27 @@ const Navbar = ({ section }: Prop) => {
     }
   };
 
+  const handleThemeChange = async () => {
+    setIsDark((prev) => !prev);
+  };
+
   return (
     <header className={`nav ${isNavOpen ? "open" : "close"}`}>
       <h1 className="font-[500] dark:text-gray-200">Jessie Apac</h1>
       <nav className="gap-x-4 hidden md:flex items-center">
-        {navlink &&
-          navlink.map((link: navlinkType) => (
-            <NavLink
-              key={nanoid()}
-              to={link.link}
-              className={`${
-                link.active && "!text-blue-500"
-              } font-[500] text-black dark:text-gray-200`}
-              onClick={() => handleLinkClick(link.id, link.type)}
-            >
-              {link.label}
-            </NavLink>
-          ))}
-        <button
-          className="theme-btn text-xl"
-          onClick={() => setIsDark((prev) => !prev)}
-        >
+        {navlinks.map((link: navlinkType) => (
+          <NavLink
+            key={nanoid()}
+            to={link.link}
+            className={`${
+              activeLink === link.type && "!text-blue-500"
+            } font-[500] text-black dark:text-gray-200`}
+            onClick={() => handleLinkClick(link.type)}
+          >
+            {link.label}
+          </NavLink>
+        ))}
+        <button className="theme-btn text-xl" onClick={handleThemeChange}>
           <FaSun
             className={`${
               isDark ? "translate-y-8" : "translate-y-0"
@@ -134,21 +161,20 @@ const Navbar = ({ section }: Prop) => {
       </button>
 
       <nav className={`${isNavOpen ? "open" : "close"} hamburger-menu`}>
-        {navlink &&
-          navlink.map((link: navlinkType) => (
-            <NavLink
-              key={nanoid()}
-              to={link.link}
-              className={`${
-                link.active
-                  ? "text-blue-800 dark:text-blue-400"
-                  : "text-white dark:text-gray-200"
-              } font-[500]`}
-              onClick={() => handleLinkClick(link.id, link.type)}
-            >
-              {link.label}
-            </NavLink>
-          ))}
+        {navlinks.map((link: navlinkType) => (
+          <NavLink
+            key={nanoid()}
+            to={link.link}
+            className={`${
+              activeLink === link.type
+                ? "text-blue-800 dark:text-blue-400"
+                : "text-white dark:text-gray-200"
+            } font-[500]`}
+            onClick={() => handleLinkClick(link.type)}
+          >
+            {link.label}
+          </NavLink>
+        ))}
         <button
           className="theme-btn text-3xl mt-5"
           onClick={() => setIsDark((prev) => !prev)}

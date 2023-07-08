@@ -8,6 +8,7 @@ const Hero = ({ reference }: { reference: RefObject<HTMLDivElement> }) => {
   return (
     <section
       className="w-full flex justify-center py-[4rem] md:py-[8rem]"
+      id="home"
       ref={reference}
     >
       <div className="relative  lg:w-full flex flex-col md:px-4  md:flex-row justify-center gap-y-4 md:gap-y-0 gap-x-8 items-center">
