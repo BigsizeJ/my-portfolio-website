@@ -86,7 +86,7 @@ body {
 .hamburger-menu {
   @apply p-4 md:hidden fixed  w-[87.5vw] -top-8  
   flex flex-col -z-10 text-3xl
-  translate-y-10 transition-[height,_background-color] duration-500 overflow-hidden;
+  translate-y-10 transition-all duration-500 overflow-hidden;
 }
 
 .hamburger-menu a {
@@ -94,7 +94,7 @@ body {
 }
 
 .hamburger-menu.open {
-  @apply h-[calc(100%_-_16rem)] pointer-events-auto bg-blue-500 dark:bg-blue-950;
+  @apply max-h-[100rem] pointer-events-auto bg-blue-500 dark:bg-blue-950;
 }
 
 .hamburger-menu.close {

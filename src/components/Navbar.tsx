@@ -68,6 +68,8 @@ const Navbar = ({ section }: Prop) => {
       if (link.id === id) return { ...link, active: true };
       return { ...link, active: false };
     });
+    setIsNavOpen((prev) => !prev);
+    setNavlink(updateNavlink);
     switch (type) {
       case "home":
         return homeRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -78,11 +80,10 @@ const Navbar = ({ section }: Prop) => {
       case "project":
         return projectRef.current?.scrollIntoView({ behavior: "smooth" });
     }
-    setNavlink(updateNavlink);
   };
 
   return (
-    <nav className={`nav ${isNavOpen ? "open" : "close"}`}>
+    <header className={`nav ${isNavOpen ? "open" : "close"}`}>
       <h1 className="font-[500] dark:text-gray-200">Jessie Apac</h1>
       <nav className="gap-x-4 hidden md:flex items-center">
         {navlink &&
@@ -134,7 +135,7 @@ const Navbar = ({ section }: Prop) => {
                   ? "text-blue-800 dark:text-blue-400"
                   : "text-white dark:text-gray-200"
               } font-[500]`}
-              onClick={() => handleLinkClick(link.id)}
+              onClick={() => handleLinkClick(link.id, link.type)}
             >
               {link.label}
             </NavLink>
@@ -155,7 +156,7 @@ const Navbar = ({ section }: Prop) => {
           />
         </button>
       </nav>
-    </nav>
+    </header>
   );
 };
 
