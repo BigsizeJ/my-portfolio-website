@@ -7,7 +7,7 @@ import { RefObject } from "react";
 const Hero = ({ reference }: { reference: RefObject<HTMLDivElement> }) => {
   return (
     <section
-      className="w-full flex justify-center py-[4rem] md:py-[8rem]"
+      className="w-full flex justify-center py-[4rem] md:py-[8rem] padding h-screen"
       id="home"
       ref={reference}
     >
@@ -18,16 +18,16 @@ const Hero = ({ reference }: { reference: RefObject<HTMLDivElement> }) => {
             href="https://www.linkedin.com/in/jessie-apac-72154023a/"
             target="_blank"
           >
-            <FaLinkedin className="text-xl hover:text-blue-600 cursor-pointer" />
+            <FaLinkedin className="text-2xl hover:text-blue-600 cursor-pointer" />
           </a>
           <a
             href="https://www.discord.com/users/799252029313908777"
             target="_blank"
           >
-            <FaDiscord className="text-xl hover:text-blue-600 cursor-pointer" />
+            <FaDiscord className="text-2xl hover:text-blue-600 cursor-pointer" />
           </a>
           <a href="https://www.github.com/bigsizeJ" target="_blank">
-            <FaGithub className="text-xl hover:text-blue-600 cursor-pointer" />
+            <FaGithub className="text-2xl hover:text-blue-600 cursor-pointer" />
           </a>
         </section>
         {/* hero image */}
@@ -37,9 +37,9 @@ const Hero = ({ reference }: { reference: RefObject<HTMLDivElement> }) => {
           <TypeAnimation
             sequence={["Hey there!"]}
             wrapper="span"
-            className="text-3xl md:text-4xl text-blue-500 font-bold"
+            className="text-3xl md:text-4xl xl:text-5xl text-blue-500 font-bold"
           />
-          <p className="text-lg lg:text-xl text-gray-900 dark:text-gray-200">
+          <p className="text-lg lg:text-xl  text-gray-900 dark:text-gray-200">
             My name is Jessie, nice to meet you
           </p>
           <p className="text-base text-gray-500 dark:text-gray-300">

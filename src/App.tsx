@@ -19,7 +19,6 @@ const App = () => {
       <About reference={aboutRef} />
       <Skills reference={skillRef} />
       <Projects reference={projectRef} />
-      <BackgroundAnimation />
     </section>
   );
 };

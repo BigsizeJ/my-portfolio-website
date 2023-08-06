@@ -5,7 +5,7 @@ import { RefObject } from "react";
 const About = ({ reference }: { reference: RefObject<HTMLDivElement> }) => {
   return (
     <section
-      className="w-full flex flex-col items-center justify-center"
+      className="w-full flex flex-col items-center justify-center padding"
       id="about"
       ref={reference}
     >

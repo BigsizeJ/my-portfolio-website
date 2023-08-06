@@ -2,108 +2,119 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  scroll-margin-top: 3rem;
+@layer base {
+  * {
+    scroll-margin-top: 3rem;
+  }
+
+  body {
+    scroll-behavior: smooth;
+  }
 }
 
-body {
-  scroll-behavior: smooth;
+@layer components {
+  .app {
+    @apply font-Inter transition duration-500 relative  dark:bg-slate-900;
+  }
+
+  .nav {
+    @apply flex w-full justify-between items-center fixed top-0 z-50 bg-white
+     dark:bg-slate-900 transition-[background] duration-500 py-2.5 md:py-5
+     px-5 lg:px-[10rem] xl:px-[15rem];
+  }
+
+  .nav h1 {
+    @apply !transition-transform !duration-200;
+  }
+
+  .nav.open {
+    @apply !text-white md:!text-black;
+  }
+
+  .nav.open h1 {
+    @apply translate-x-2 md:translate-x-0;
+  }
+
+  .nav.close h1 {
+    @apply translate-x-0;
+  }
+
+  .nav.open .hamburger-button {
+    @apply -translate-x-3 transition duration-200;
+  }
+
+  .nav.open .hamburger-button span {
+    @apply bg-white transition duration-200;
+  }
+
+  .nav.close .hamburger-button span {
+    @apply bg-black transition duration-200;
+  }
+
+  .image-ctn {
+    border-radius: 51% 49% 50% 50% / 30% 31% 69% 70%;
+    /* border-radius: 50%; */
+    @apply object-contain w-[13rem] md:w-[15rem] lg:w-[20rem];
+  }
+
+  .section-header {
+    @apply text-xl md:text-2xl lg:text-4xl font-semibold text-blue-500;
+  }
+
+  .section-p {
+    @apply text-gray-400 dark:text-gray-500;
+  }
+
+  .skill-header {
+    @apply dark:text-gray-200 flex items-center gap-x-3 font-bold text-base  md:text-xl;
+  }
+
+  /* theme button */
+  .theme-btn {
+    @apply flex cursor-pointer justify-center items-center 
+    relative overflow-y-hidden;
+  }
+
+  /* hamburger  button */
+  .hamburger-button {
+    @apply flex flex-col md:hidden justify-between h-3 items-center z-50
+    bg-transparent border-0 cursor-pointer transition-transform duration-500;
+  }
+
+  .hamburger-button span {
+    @apply rounded-full w-7 h-1 bg-black dark:!bg-gray-200 transition-transform duration-300;
+  }
+
+  .hamburger-button.open span:first-child {
+    @apply transform rotate-45 translate-y-1;
+  }
+  .hamburger-button.open span:last-child {
+    @apply transform -rotate-45 translate-y-[-4px];
+  }
+
+  /* hamburger menu */
+  .hamburger-menu {
+    @apply p-4 md:hidden fixed  w-[87.5vw] -top-8  
+    flex flex-col -z-10 text-3xl
+    translate-y-10 transition-all duration-500 overflow-hidden;
+  }
+
+  .hamburger-menu a {
+    @apply mt-10 transition-transform delay-500 duration-500;
+  }
+
+  .hamburger-menu.open {
+    @apply max-h-[calc(100%_-_16rem)] pointer-events-auto bg-blue-500 dark:bg-blue-950;
+  }
+
+  .hamburger-menu.close {
+    @apply h-0 pointer-events-none;
+  }
 }
 
-.app {
-  @apply px-5 py-3 lg:px-[10rem] 
-  xl:px-[15rem] lg:py-[.5rem] font-Inter transition duration-500 relative;
-}
-
-.nav {
-  @apply flex w-full justify-between items-center sticky py-3 top-0 z-50 bg-white
-   dark:bg-slate-900 transition-[background] duration-500;
-}
-
-.nav h1 {
-  @apply !transition-transform !duration-200;
-}
-
-.nav.open {
-  @apply !text-white md:!text-black;
-}
-
-.nav.open h1 {
-  @apply translate-x-2 md:translate-x-0;
-}
-
-.nav.close h1 {
-  @apply translate-x-0;
-}
-
-.nav.open .hamburger-button {
-  @apply -translate-x-3 transition duration-200;
-}
-
-.nav.open .hamburger-button span {
-  @apply bg-white transition duration-200;
-}
-
-.nav.close .hamburger-button span {
-  @apply bg-black transition duration-200;
-}
-
-.image-ctn {
-  border-radius: 51% 49% 50% 50% / 30% 31% 69% 70%;
-  /* border-radius: 50%; */
-  @apply object-contain w-[13rem] md:w-[15rem] xl:w-[18rem];
-}
-
-.section-header {
-  @apply text-xl md:text-2xl lg:text-4xl font-semibold text-blue-500;
-}
-
-.section-p {
-  @apply text-gray-400 dark:text-gray-500;
-}
-
-.skill-header {
-  @apply dark:text-gray-200 flex items-center gap-x-3 font-bold text-base  md:text-xl;
-}
-
-/* theme button */
-.theme-btn {
-  @apply flex cursor-pointer justify-center items-center 
-  relative overflow-y-hidden;
-}
-
-/* hamburger  button */
-.hamburger-button {
-  @apply flex flex-col md:hidden justify-between h-3 items-center z-50
-  bg-transparent border-0 cursor-pointer transition-transform duration-500;
-}
-
-.hamburger-button span {
-  @apply rounded-full w-7 h-1 bg-black dark:!bg-gray-200 transition-transform duration-300;
-}
-
-.hamburger-button.open span:first-child {
-  @apply transform rotate-45 translate-y-1;
-}
-.hamburger-button.open span:last-child {
-  @apply transform -rotate-45 translate-y-[-4px];
-}
-
-/* hamburger menu */
-.hamburger-menu {
-  @apply p-4 md:hidden fixed  w-[87.5vw] -top-8  
-  flex flex-col -z-10 text-3xl
-  translate-y-10 transition-all duration-500 overflow-hidden;
-}
-
-.hamburger-menu a {
-  @apply mt-10 transition-transform delay-500 duration-500;
-}
-
-.hamburger-menu.open {
-  @apply max-h-[calc(100%_-_16rem)] pointer-events-auto bg-blue-500 dark:bg-blue-950;
-}
-
-.hamburger-menu.close {
-  @apply h-0 pointer-events-none;
+@layer utilities {
+  .padding {
+    @apply px-5 py-3 lg:px-[10rem] 
+    xl:px-[15rem] lg:py-[.5rem];
+  }
 }
