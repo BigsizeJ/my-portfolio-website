@@ -1,76 +1,84 @@
+import htmlIcon from "../assets/html-logo.png";
+import cssIcon from "../assets/css-logo.svg";
+import jsIcon from "../assets/javascript-logo.png";
+import tsIcon from "../assets/typescript-logo.svg";
+import reactIcon from "../assets/react-logo.png";
+import tailwindIcon from "../assets/tailwind-logo.svg";
+import reduxIcon from "../assets/redux-logo.png";
+import saasIcon from "../assets/saas-logo.svg";
+import styledIcon from "../assets/styled-logo.png";
+import framerIcon from "../assets/framer-logo.png";
+
 export const skills = {
   frontend: [
     {
       label: "HTML",
-      percent: "90",
+      icon: htmlIcon,
     },
     {
       label: "CSS",
-      percent: "90",
+      icon: cssIcon,
     },
+    { label: "SASS", icon: saasIcon },
+    {
+      label: "Tailwind CSS",
+      icon: tailwindIcon,
+    },
+    { label: "Styled Component", icon: styledIcon },
     {
       label: "JavaScript",
-      percent: "90",
+      icon: jsIcon,
     },
     {
       label: "TypeScript",
-      percent: "80",
+      icon: tsIcon,
     },
     {
       label: "ReactJS",
-      percent: "80",
+      icon: reactIcon,
     },
+    { label: "Redux", icon: reduxIcon },
     {
-      label: "Tailwind CSS",
-      percent: "80",
+      label: "Framer-motion",
+      icon: framerIcon,
     },
   ],
   backend: [
     {
       label: "NodeJS",
-      percent: "80",
     },
     {
       label: "Python",
-      percent: "50",
     },
     {
       label: "Java",
-      percent: "60",
     },
     {
       label: "ExpressJS",
-      percent: "80",
     },
     {
       label: "MongoDB",
-      percent: "90",
     },
     {
       label: "MySQL",
-      percent: "70",
     },
     {
       label: "Socket.io",
-      percent: "60",
     },
   ],
   miscellaneous: [
     {
       label: "Git",
-      percent: "60",
     },
     {
       label: "Bash",
-      percent: "70",
     },
-    { label: "Vite", percent: "90" },
-    { label: "Webpack", percent: "60" },
-    { label: "NPM", percent: "90" },
-    { label: "API Integration", percent: "90" },
+    { label: "Vite" },
+    { label: "Webpack" },
+    { label: "NPM" },
+    { label: "API Integration" },
     {
       label: "RESTful API",
-      percent: "80",
     },
   ],
 };

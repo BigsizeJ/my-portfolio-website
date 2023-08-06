@@ -14,7 +14,7 @@
 
 @layer components {
   .app {
-    @apply font-Inter transition duration-500 relative  dark:bg-slate-900;
+    @apply font-Inter transition duration-500 dark:bg-slate-900 relative;
   }
 
   .nav {

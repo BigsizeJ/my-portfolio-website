@@ -3,7 +3,6 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
-import BackgroundAnimation from "./components/BackgroundAnimation";
 import { useRef } from "react";
 
 const App = () => {
