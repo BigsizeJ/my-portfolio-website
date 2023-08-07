@@ -61,7 +61,7 @@ const Navbar = ({ section }: Prop) => {
   const observerOptions = {
     root: null,
     rootMargin: "10px",
-    threshold: 0.9,
+    threshold: 0.5,
   };
 
   useEffect(() => {
