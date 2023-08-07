@@ -1,15 +1,9 @@
-import { RefObject, useState } from "react";
+import { RefObject } from "react";
 import { PiBracketsCurlyBold } from "react-icons/pi";
 import { AiFillDatabase } from "react-icons/ai";
-import { skills } from "./skillset";
+import { skills } from "./listOfSkill";
 import { MdMiscellaneousServices } from "react-icons/md";
 import Skillset from "./Skillset";
-
-enum DropdownType {
-  FRONTEND = "frontend",
-  BACKEND = "backend",
-  MISCELLANEOUS = "miscellaneous",
-}
 
 const Skills = ({ reference }: { reference: RefObject<HTMLDivElement> }) => {
   return (
@@ -25,6 +19,16 @@ const Skills = ({ reference }: { reference: RefObject<HTMLDivElement> }) => {
         skills={skills.frontend}
         skillType="Frontend"
         icon={<PiBracketsCurlyBold className="text-blue-500 text-2xl" />}
+      />
+      <Skillset
+        skills={skills.backend}
+        skillType="Backend"
+        icon={<AiFillDatabase className="text-blue-500 text-2xl" />}
+      />
+      <Skillset
+        skills={skills.tools}
+        skillType="Tools"
+        icon={<MdMiscellaneousServices className="text-blue-500 text-2xl" />}
       />
     </section>
   );

@@ -5,6 +5,8 @@ import { FaLinkedin, FaGithub, FaDiscord } from "react-icons/fa";
 import { RefObject } from "react";
 
 const Hero = ({ reference }: { reference: RefObject<HTMLDivElement> }) => {
+  const pClassname = "text-base text-gray-500 dark:text-gray-300";
+
   return (
     <section
       className="w-full flex justify-center py-[4rem] md:py-[8rem] padding h-screen"
@@ -31,7 +33,7 @@ const Hero = ({ reference }: { reference: RefObject<HTMLDivElement> }) => {
           </a>
         </section>
         {/* hero image */}
-        <img src={picture} className="image-ctn" />
+        <img src={picture} className="image-ctn animate-enter" />
         {/* hero p */}
         <div className="lg:w-[25rem] flex flex-col gap-y-2">
           <TypeAnimation
@@ -42,11 +44,21 @@ const Hero = ({ reference }: { reference: RefObject<HTMLDivElement> }) => {
           <p className="text-lg lg:text-xl  text-gray-900 dark:text-gray-200">
             My name is Jessie, nice to meet you
           </p>
-          <p className="text-base text-gray-500 dark:text-gray-300">
-            I'm a upcoming fourth-year Computer Science student at the Lyceum of
-            Alabang. I am interested in web development, designing websites, AI,
-            and overall enjoy development of any sort.
-          </p>
+          <div className={`${pClassname} animate-in`}>
+            <span className="animate-in slide-in-from-bottom-10 duration-1000 ">
+              I'm a upcoming fourth-year Computer Science{" "}
+            </span>
+            <span className="animate-enter ">
+              student at the Lyceum of Alabang. I am interested in
+            </span>
+            <span className="animate-enter ">
+              web development, designing websites, AI, and
+            </span>
+            <span className="animate-enter ">
+              overall enjoy development of any sort.
+            </span>
+          </div>
+
           <div className="flex gap-x-6 items-center md:gap-x-8 mt-2">
             <a
               href="mailto:apacjessie@gmail.com"

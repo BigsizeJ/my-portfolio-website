@@ -3,12 +3,11 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   * {
     scroll-margin-top: 3rem;
-  }
-
-  body {
-    scroll-behavior: smooth;
   }
 }
 
@@ -116,5 +115,8 @@
   .padding {
     @apply px-5 py-3 lg:px-[10rem] 
     xl:px-[15rem] lg:py-[.5rem];
+  }
+  .animate-enter {
+    @apply animate-in slide-in-from-bottom-10 duration-1000;
   }
 }
