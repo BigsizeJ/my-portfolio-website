@@ -7,7 +7,7 @@
     scroll-behavior: smooth;
   }
   * {
-    scroll-margin-top: 5rem;
+    scroll-margin-top: 3rem;
   }
 }
 
@@ -117,9 +117,6 @@
     xl:px-[15rem] lg:py-[.5rem];
   }
   .animate-enter {
-    @apply animate-in slide-in-from-bottom-10 duration-1000;
-  }
-  .herotext-enter {
-    @apply animate-in slide-in-from-bottom-5 duration-1000;
+    @apply animate-in slide-in-from-bottom-3 duration-1000;
   }
 }

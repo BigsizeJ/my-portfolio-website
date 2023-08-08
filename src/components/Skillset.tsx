@@ -17,11 +17,11 @@ const Skillset = ({ skills, skillType, icon }: Props) => {
           </h1>
         </div>
         <div
-          className="grid grid-cols-[repeat(3,80px)] 
+          className="grid grid-cols-[repeat(3,1fr)] 
           
-          md:grid-cols-[repeat(5,120px)]
-          xl:grid-cols-[repeat(6,120px)]
-          grid-rows-[repeat(3,100px)] md:grid-rows-[repeat(2,120px)]
+          md:grid-cols-[repeat(5,1fr)]
+          xl:grid-cols-[repeat(6,1fr)]
+          grid-rows-[repeat(3,1fr)] md:grid-rows-[repeat(2,minmax(120px,1fr))]
         justify-center md:justify-between
         w-full  mt-5 gap-5"
         >

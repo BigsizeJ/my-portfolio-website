@@ -5,11 +5,9 @@ import { FaLinkedin, FaGithub, FaDiscord } from "react-icons/fa";
 import { RefObject } from "react";
 
 const Hero = ({ reference }: { reference: RefObject<HTMLDivElement> }) => {
-  const pClassname = "text-base text-gray-500 dark:text-gray-300";
-
   return (
     <section
-      className="w-full flex justify-center py-[4rem] md:py-[8rem] padding h-screen"
+      className="mt-10 w-full flex justify-center py-[4rem] md:py-[8rem] padding h-screen"
       id="home"
       ref={reference}
     >
@@ -39,30 +37,22 @@ const Hero = ({ reference }: { reference: RefObject<HTMLDivElement> }) => {
           <TypeAnimation
             sequence={["Hey there!"]}
             wrapper="span"
-            className="text-3xl md:text-4xl xl:text-5xl text-blue-500 font-bold"
+            className="animate-enter text-3xl md:text-4xl xl:text-5xl text-blue-500 font-bold"
           />
-          <p className="text-lg lg:text-xl  text-gray-900 dark:text-gray-200">
+          <p className="text-lg lg:text-xl  text-gray-900 dark:text-gray-200 animate-enter">
             My name is Jessie, nice to meet you
           </p>
-          <div className={`${pClassname} flex flex-col`}>
-            <span className="herotext-enter delay-75">
-              I'm a upcoming fourth-year Computer Science{" "}
-            </span>
-            <span className="herotext-enter delay-100">
-              student at the Lyceum of Alabang. I am interested in
-            </span>
-            <span className="herotext-enter delay-150">
-              web development, designing websites, AI, and
-            </span>
-            <span className="herotext-enter delay-200">
-              overall enjoy development of any sort.
-            </span>
-          </div>
+          <p className="text-base text-gray-500 dark:text-gray-300 animate-enter">
+            I'm a upcoming fourth-year Computer Science student at the Lyceum of
+            Alabang. I am interested in web development, designing websites, AI,
+            and overall enjoy development of any sort.
+          </p>
 
           <div className="flex gap-x-6 items-center md:gap-x-8 mt-2">
             <a
               href="mailto:apacjessie@gmail.com"
-              className="flex items-center gap-x-2 bg-blue-500 text-white p-2 md:p-3 w-fit rounded-md font-bold hover:bg-blue-600"
+              className="flex items-center gap-x-2 bg-blue-500 text-white p-2 md:p-3 
+              w-fit rounded-md font-bold hover:bg-blue-600"
             >
               Contact me <MdEmail className="text-xl" />
             </a>
