@@ -44,17 +44,17 @@ const Hero = ({ reference }: { reference: RefObject<HTMLDivElement> }) => {
           <p className="text-lg lg:text-xl  text-gray-900 dark:text-gray-200">
             My name is Jessie, nice to meet you
           </p>
-          <div className={`${pClassname} animate-in`}>
-            <span className="animate-in slide-in-from-bottom-10 duration-1000 ">
+          <div className={`${pClassname} flex flex-col`}>
+            <span className="herotext-enter delay-75">
               I'm a upcoming fourth-year Computer Science{" "}
             </span>
-            <span className="animate-enter ">
+            <span className="herotext-enter delay-100">
               student at the Lyceum of Alabang. I am interested in
             </span>
-            <span className="animate-enter ">
+            <span className="herotext-enter delay-150">
               web development, designing websites, AI, and
             </span>
-            <span className="animate-enter ">
+            <span className="herotext-enter delay-200">
               overall enjoy development of any sort.
             </span>
           </div>

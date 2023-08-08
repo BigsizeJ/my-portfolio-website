@@ -20,9 +20,9 @@ const Skillset = ({ skills, skillType, icon }: Props) => {
           className="grid grid-cols-[repeat(3,80px)] 
           
           md:grid-cols-[repeat(5,120px)]
-          lg:grid-cols-[repeat(6,120px)] 
+          xl:grid-cols-[repeat(6,120px)]
           grid-rows-[repeat(3,100px)] md:grid-rows-[repeat(2,120px)]
-        justify-between
+        justify-center md:justify-between
         w-full  mt-5 gap-5"
         >
           {skills &&
@@ -30,7 +30,7 @@ const Skillset = ({ skills, skillType, icon }: Props) => {
               <div
                 className="flex flex-col items-center justify-center gap-2 p-2 
               bg-blue-200/25
-              dark:bg-blue-900/25 shadow-lg"
+              dark:bg-blue-900/25 shadow-sm"
               >
                 <img src={skill.icon} className="aspect-square w-10" />
                 <h1 className="text-black font-[500]  dark:text-white text-xs md:text-sm">
