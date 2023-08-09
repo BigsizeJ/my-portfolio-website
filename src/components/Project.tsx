@@ -1,5 +1,5 @@
-import { motion, useScroll } from "framer-motion";
-import { useRef, useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { useRef } from "react";
 
 interface Props {
   pageBackgroundColor: string;
@@ -21,7 +21,8 @@ const Project = ({
   return (
     <section
       ref={ref}
-      className={`bg-[${pageBackgroundColor}] h-screen w-full text-white  top-0 sticky
+      style={{ backgroundColor: pageBackgroundColor }}
+      className={`h-screen w-full text-white  top-0 sticky
       justify-center px-5 pt-18 md:pt-20 lg:pt-0 md:px-20 
       gap-x-10 flex flex-col md:flex-row items-center`}
     >

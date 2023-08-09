@@ -13,7 +13,7 @@ const Projects = ({ reference }: { reference: RefObject<HTMLDivElement> }) => {
       <p className="section-p">My selected personal projects.</p>
       <div className="w-full mt-10">
         <Project
-          pageBackgroundColor="black"
+          pageBackgroundColor="#000"
           projectName="EXCLSV"
           projectDescription="The E-commerce Website is a full-stack project built using modern
           web technologes. The frontend is developed using Vite, Typescript,
