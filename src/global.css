@@ -8,7 +8,7 @@
     overflow-x: hidden;
   }
   body {
-    @apply dark:bg-slate-900;
+    @apply dark:bg-slate-900 transition-[background-color] duration-500;
   }
   * {
     scroll-margin-top: 3rem;

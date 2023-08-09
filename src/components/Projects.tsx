@@ -1,6 +1,4 @@
 import { RefObject } from "react";
-import Exclsv from "./project/Exclsv";
-import ThoughtBox from "./project/ThoughtBox";
 import Project from "./Project";
 import exclsvPicture from "../assets/exclsv.png";
 
@@ -26,7 +24,6 @@ const Projects = ({ reference }: { reference: RefObject<HTMLDivElement> }) => {
           projectTechnologies={["Mern stack", "TypeScript", "Vite", "RTK"]}
           projectImage={exclsvPicture}
         />
-        <ThoughtBox />
       </div>
     </section>
   );
