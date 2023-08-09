@@ -25,6 +25,7 @@ const Navbar = ({ section }: Prop) => {
   const [isNavOpen, setIsNavOpen] = useState<boolean>(false);
   const [isDark, setIsDark] = useState<boolean>(false);
   const [activeLink, setActiveLink] = useState<string>("home");
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
 
   const navlinks = [
     {
@@ -103,6 +104,18 @@ const Navbar = ({ section }: Prop) => {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 100);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const handleLinkClick = (type: string) => {
     setActiveLink(type);
     setIsNavOpen((prev) => !prev);
@@ -123,7 +136,13 @@ const Navbar = ({ section }: Prop) => {
   };
 
   return (
-    <header className={`nav ${isNavOpen ? "open" : "close"}`}>
+    <header
+      className={`nav ${isNavOpen ? "open" : "close"} ${
+        isScrolled
+          ? "backdrop-blur-md border-b-2 border-blue-500/25 bg-white/25 dark:bg-black/25"
+          : "bg-transparent"
+      }`}
+    >
       <h1 className="font-[500] dark:text-gray-200">Jessie Apac</h1>
       <nav className="gap-x-4 hidden md:flex items-center">
         {navlinks.map((link: navlinkType) => (

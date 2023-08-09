@@ -7,7 +7,7 @@ import { RefObject } from "react";
 const Hero = ({ reference }: { reference: RefObject<HTMLDivElement> }) => {
   return (
     <section
-      className="mt-10 w-full flex justify-center py-[4rem] md:py-[8rem] padding h-screen"
+      className="mt-10 md:mt-0 w-full flex justify-center py-[4rem] md:py-[8rem] padding h-screen"
       id="home"
       ref={reference}
     >
