@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { motion } from "framer-motion";
 
 interface Props {
   skills: { label: string; icon: string }[];
@@ -7,6 +8,20 @@ interface Props {
 }
 
 const Skillset = ({ skills, skillType, icon }: Props) => {
+  const fadeInAnimationVariants = {
+    initial: {
+      opacity: 0,
+      y: 100,
+    },
+    animate: (index: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 0.05 * index,
+      },
+    }),
+  };
+
   return (
     <div className="flex flex-col w-full xl:w-[55vw] mt-8">
       <section className="w-full">
@@ -18,7 +33,6 @@ const Skillset = ({ skills, skillType, icon }: Props) => {
         </div>
         <div
           className="grid grid-cols-[repeat(3,1fr)] 
-          
           md:grid-cols-[repeat(5,1fr)]
           xl:grid-cols-[repeat(6,1fr)]
           grid-rows-[repeat(3,1fr)] md:grid-rows-[repeat(2,minmax(120px,1fr))]
@@ -26,17 +40,21 @@ const Skillset = ({ skills, skillType, icon }: Props) => {
         w-full  mt-5 gap-5"
         >
           {skills &&
-            skills.map((skill: { label: string; icon: string }) => (
-              <div
-                className="flex flex-col items-center justify-center gap-2 p-2 
-              bg-blue-200/25
-              dark:bg-blue-900/25 shadow-sm"
+            skills.map((skill: { label: string; icon: string }, index) => (
+              <motion.div
+                key={index}
+                variants={fadeInAnimationVariants}
+                custom={index}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+                className="skill-tech-ctn"
               >
                 <img src={skill.icon} className="aspect-square w-10" />
                 <h1 className="text-black font-[500]  dark:text-white text-xs md:text-sm">
                   {skill.label}
                 </h1>
-              </div>
+              </motion.div>
             ))}
         </div>
       </section>

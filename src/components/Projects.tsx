@@ -21,7 +21,7 @@ const Projects = ({ reference }: { reference: RefObject<HTMLDivElement> }) => {
           Toolkit (RTK). The backend is powered by MongoDB, Express, and
           Node.js, providing a robust foundation for data storage and
           server-side functionalities."
-          projectTechnologies={["Mern stack", "TypeScript", "Vite", "RTK"]}
+          projectTechnologies={["MERN stack", "TypeScript", "Vite", "RTK"]}
           projectImage={exclsvPicture}
         />
       </div>

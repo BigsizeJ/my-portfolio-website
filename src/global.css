@@ -116,6 +116,12 @@
   .tech-text {
     @apply bg-white text-black font-[500] p-1 px-3 text-xs md:text-sm rounded-full;
   }
+
+  .skill-tech-ctn {
+    @apply flex flex-col items-center justify-center gap-2 p-2 
+    bg-blue-200/25
+    dark:bg-blue-900/25 shadow-sm;
+  }
 }
 
 @layer utilities {
