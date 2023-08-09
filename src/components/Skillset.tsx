@@ -1,5 +1,7 @@
 import { ReactNode } from "react";
 import { motion } from "framer-motion";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 interface Props {
   skills: { label: string; icon: string }[];
@@ -18,6 +20,7 @@ const Skillset = ({ skills, skillType, icon }: Props) => {
       y: 0,
       transition: {
         delay: 0.05 * index,
+        type: "spring",
       },
     }),
   };
@@ -50,7 +53,11 @@ const Skillset = ({ skills, skillType, icon }: Props) => {
                 viewport={{ once: true }}
                 className="skill-tech-ctn"
               >
-                <img src={skill.icon} className="aspect-square w-10" />
+                <LazyLoadImage
+                  src={skill.icon}
+                  effect="blur"
+                  className="aspect-square w-10"
+                />
                 <h1 className="text-black font-[500]  dark:text-white text-xs md:text-sm">
                   {skill.label}
                 </h1>
