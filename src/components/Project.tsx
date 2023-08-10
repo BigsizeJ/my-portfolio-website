@@ -99,18 +99,35 @@ const Project = ({
                 </motion.div>
               ))}
           </div>
-          <div className="flex items-center gap-2 mt-5 overflow-y-hidden">
-            <Link to="#" className="link-style">
-              <PiCode />
-              View code
-            </Link>
-            <div className="w-[1px] h-[80%] bg-gray-50 rounded-full"></div>
-            <Link to="#" className="link-style">
-              <MdHttp className="text-2xl" />
-              Live view
-            </Link>
+          <div className="flex overflow-y-hidden">
+            <motion.div
+              style={{
+                opacity: scrollYProgress,
+                y: useCustomTransform({
+                  input: scrollYProgress,
+                  inputRange: [0, 1],
+                  outputRange: [100, 0],
+                }),
+              }}
+              className="flex items-center gap-2 mt-5 translate-y-[100px]"
+            >
+              <Link to="#" target="_blank" className="link-style">
+                <PiCode />
+                View code
+              </Link>
+              <div className="w-[1px] h-[80%] bg-white/50 rounded-full"></div>
+              <Link
+                to="https://exclsv.vercel.app"
+                target="_blank"
+                className="link-style"
+              >
+                <MdHttp className="text-2xl" />
+                Live view
+              </Link>
+            </motion.div>
           </div>
         </div>
+
         <motion.img
           src={projectImage}
           style={{
