@@ -1,5 +1,8 @@
 import { MotionValue, motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
+import { PiCode } from "react-icons/pi";
+import { MdHttp } from "react-icons/md";
 
 interface Props {
   pageBackgroundColor: string;
@@ -41,10 +44,10 @@ const Project = ({
       ref={ref}
       style={{ backgroundColor: pageBackgroundColor }}
       className={`h-screen w-full text-white  top-0 sticky
-      justify-center px-5 pt-18 md:pt-20 lg:pt-0 md:px-20 
+      justify-center px-5 pt-12 md:pt-20 lg:pt-0 md:px-20 
       gap-x-10 flex flex-col md:flex-row items-center`}
     >
-      <div className="grid grid-col-1 grid-row-[1fr,2fr] lg:grid-cols-[1fr,2fr] gap-x-10 gap-y-5">
+      <div className="grid grid-col-1 grid-row-[1fr,2fr] lg:grid-cols-[1fr,2fr] gap-x-10 gap-y-2">
         <div className="flex flex-col">
           <div className="mb-5 overflow-hidden">
             <motion.h1
@@ -96,6 +99,17 @@ const Project = ({
                 </motion.div>
               ))}
           </div>
+          <div className="flex items-center gap-2 mt-5 overflow-y-hidden">
+            <Link to="#" className="link-style">
+              <PiCode />
+              View code
+            </Link>
+            <div className="w-[1px] h-[80%] bg-gray-50 rounded-full"></div>
+            <Link to="#" className="link-style">
+              <MdHttp className="text-2xl" />
+              Live view
+            </Link>
+          </div>
         </div>
         <motion.img
           src={projectImage}
@@ -112,7 +126,7 @@ const Project = ({
               outputRange: ["100%", "0%"],
             }),
           }}
-          className="object-contain bg-blue-300/25 translate-y-[200px]"
+          className="object-contain bg-blue-300/25 md:h-[19rem] md:w-fit lg:h-fit g:w-full translate-y-[200px]"
         />
       </div>
     </section>

@@ -3,6 +3,8 @@ import { TypeAnimation } from "react-type-animation";
 import { MdEmail } from "react-icons/md";
 import { FaLinkedin, FaGithub, FaDiscord } from "react-icons/fa";
 import { RefObject } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const Hero = ({ reference }: { reference: RefObject<HTMLDivElement> }) => {
   return (
@@ -31,7 +33,11 @@ const Hero = ({ reference }: { reference: RefObject<HTMLDivElement> }) => {
           </a>
         </section>
         {/* hero image */}
-        <img src={picture} className="image-ctn animate-enter" />
+        <LazyLoadImage
+          src={picture}
+          effect="blur"
+          className="image-ctn animate-enter"
+        />
         {/* hero p */}
         <div className="lg:w-[25rem] flex flex-col gap-y-2">
           <TypeAnimation

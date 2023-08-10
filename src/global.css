@@ -114,7 +114,7 @@
   }
 
   .tech-text {
-    @apply bg-white text-black font-[500] p-1 px-3 text-xs md:text-sm rounded-full;
+    @apply bg-white text-black font-[500] py-1 px-3 xl:py-1.5 text-xs md:text-sm rounded-full;
   }
 
   .skill-tech-ctn {
@@ -131,5 +131,9 @@
   }
   .animate-enter {
     @apply animate-in slide-in-from-bottom-3 duration-1000;
+  }
+  .link-style {
+    @apply transition-[background-color] duration-200 hover:bg-white/25 
+    py-2 px-3 flex gap-x-2 items-center;
   }
 }
