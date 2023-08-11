@@ -141,7 +141,7 @@ const Project = ({
               outputRange: ["100%", "0%"],
             }),
           }}
-          className="object-contain bg-blue-300/25 md:h-[19rem] md:w-fit lg:h-fit g:w-full translate-y-[200px]"
+          className="object-contain bg-blue-300/25 md:h-[17rem] md:w-fit lg:h-fit g:w-full translate-y-[200px]"
         />
       </div>
     </section>
