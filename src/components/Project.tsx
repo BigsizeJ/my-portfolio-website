@@ -61,7 +61,7 @@ const Project = ({
                   outputRange: [70, 0],
                 }),
               }}
-              className="text-5xl xl:text-7xl font-bold py-2"
+              className="text-4xl md:text-5xl xl:text-7xl font-bold py-2"
             >
               {projectName}
             </motion.h1>
@@ -86,12 +86,10 @@ const Project = ({
               projectTechnologies.map((technology, index) => (
                 <motion.div
                   key={index}
-                  className="translate-y-[70px]"
                   style={{
                     opacity: scrollYProgress,
                     y: useCustomTransform({
                       input: scrollYProgress,
-
                       inputRange: [0, 1],
                       outputRange: [70, 0],
                     }),
@@ -111,7 +109,7 @@ const Project = ({
                   outputRange: [90, 0],
                 }),
               }}
-              className="flex items-center gap-2 mt-5 translate-y-[90px]"
+              className="flex items-center gap-2 mt-5 "
             >
               <Link to={projectLink[0]} target="_blank" className="link-style">
                 <PiCode />
@@ -141,7 +139,7 @@ const Project = ({
               outputRange: ["100%", "0%"],
             }),
           }}
-          className="object-contain bg-blue-300/25 md:h-[17rem] md:w-fit lg:h-fit g:w-full translate-y-[200px]"
+          className="object-contain bg-blue-300/25 md:h-[17rem] md:w-fit lg:h-fit g:w-full"
         />
       </div>
     </section>
