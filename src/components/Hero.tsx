@@ -33,11 +33,7 @@ const Hero = ({ reference }: { reference: RefObject<HTMLDivElement> }) => {
           </a>
         </section>
         {/* hero image */}
-        <LazyLoadImage
-          src={picture}
-          effect="blur"
-          className="image-ctn animate-enter"
-        />
+        <img src={picture} className="image-ctn animate-enter" />
         {/* hero p */}
         <div className="lg:w-[25rem] flex flex-col gap-y-2">
           <TypeAnimation
