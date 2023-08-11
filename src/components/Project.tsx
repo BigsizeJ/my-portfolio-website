@@ -106,10 +106,10 @@ const Project = ({
                 y: useCustomTransform({
                   input: scrollYProgress,
                   inputRange: [0, 1],
-                  outputRange: [100, 0],
+                  outputRange: [90, 0],
                 }),
               }}
-              className="flex items-center gap-2 mt-5 translate-y-[100px]"
+              className="flex items-center gap-2 mt-5 translate-y-[90px]"
             >
               <Link to="#" target="_blank" className="link-style">
                 <PiCode />
