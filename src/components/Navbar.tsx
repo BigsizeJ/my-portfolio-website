@@ -20,44 +20,44 @@ interface navlinkType {
   active: boolean;
 }
 
+const navlinks = [
+  {
+    id: nanoid(),
+    label: "Home",
+    link: "#",
+    type: "home",
+    active: true,
+  },
+  {
+    id: nanoid(),
+
+    label: "About",
+    link: "#about",
+    type: "about",
+    active: false,
+  },
+  {
+    id: nanoid(),
+    label: "Skills",
+    link: "#skills",
+    type: "skill",
+    active: false,
+  },
+  {
+    id: nanoid(),
+    label: "Projects",
+    link: "#projects",
+    type: "project",
+    active: false,
+  },
+];
+
 const Navbar = ({ section }: Prop) => {
   const { homeRef, aboutRef, skillRef, projectRef } = section;
   const [isNavOpen, setIsNavOpen] = useState<boolean>(false);
   const [isDark, setIsDark] = useState<boolean>(false);
   const [activeLink, setActiveLink] = useState<string>("home");
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
-
-  const navlinks = [
-    {
-      id: nanoid(),
-      label: "Home",
-      link: "#",
-      type: "home",
-      active: true,
-    },
-    {
-      id: nanoid(),
-
-      label: "About",
-      link: "#about",
-      type: "about",
-      active: false,
-    },
-    {
-      id: nanoid(),
-      label: "Skills",
-      link: "#skills",
-      type: "skill",
-      active: false,
-    },
-    {
-      id: nanoid(),
-      label: "Projects",
-      link: "#projects",
-      type: "project",
-      active: false,
-    },
-  ];
 
   const observerOptions = {
     root: null,
@@ -138,9 +138,7 @@ const Navbar = ({ section }: Prop) => {
   return (
     <header
       className={`nav ${isNavOpen ? "open" : "close"} ${
-        isScrolled
-          ? "backdrop-blur-md border-b-2 border-blue-500/25 bg-white/25 dark:bg-black/25"
-          : "bg-transparent"
+        isScrolled ? "scrolled" : "bg-transparent"
       }`}
     >
       <h1 className="font-[500] dark:text-gray-200">Jessie Apac</h1>

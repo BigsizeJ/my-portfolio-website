@@ -10,6 +10,7 @@ interface Props {
   projectDescription: string;
   projectTechnologies: string[];
   projectImage: string;
+  projectLink: [string, string];
 }
 
 type useCustomTransformType = {
@@ -31,6 +32,7 @@ const Project = ({
   projectName,
   projectDescription,
   projectTechnologies,
+  projectLink,
   projectImage,
 }: Props) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -49,7 +51,7 @@ const Project = ({
     >
       <div className="grid grid-col-1 grid-row-[1fr,2fr] lg:grid-cols-[1fr,2fr] gap-x-10 gap-y-2">
         <div className="flex flex-col">
-          <div className="mb-5 overflow-hidden">
+          <div className="mb-4 overflow-hidden">
             <motion.h1
               style={{
                 opacity: scrollYProgress,
@@ -59,7 +61,7 @@ const Project = ({
                   outputRange: [70, 0],
                 }),
               }}
-              className="text-5xl xl:text-7xl font-bold"
+              className="text-5xl xl:text-7xl font-bold py-2"
             >
               {projectName}
             </motion.h1>
@@ -111,16 +113,12 @@ const Project = ({
               }}
               className="flex items-center gap-2 mt-5 translate-y-[90px]"
             >
-              <Link to="#" target="_blank" className="link-style">
+              <Link to={projectLink[0]} target="_blank" className="link-style">
                 <PiCode />
                 View code
               </Link>
               <div className="w-[1px] h-[80%] bg-white/50 rounded-full"></div>
-              <Link
-                to="https://exclsv.vercel.app"
-                target="_blank"
-                className="link-style"
-              >
+              <Link to={projectLink[1]} target="_blank" className="link-style">
                 <MdHttp className="text-2xl" />
                 Live view
               </Link>
