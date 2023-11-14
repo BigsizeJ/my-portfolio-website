@@ -3,10 +3,7 @@ import { TypeAnimation } from "react-type-animation";
 import { MdEmail } from "react-icons/md";
 import { FaLinkedin, FaGithub, FaDiscord } from "react-icons/fa";
 import { RefObject } from "react";
-import {
-  LazyLoadComponent,
-  LazyLoadImage,
-} from "react-lazy-load-image-component";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
 const Hero = ({ reference }: { reference: RefObject<HTMLDivElement> }) => {
