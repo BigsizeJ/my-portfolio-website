@@ -158,12 +158,13 @@ const Navbar = ({ section }: Prop) => {
         <button className="theme-btn text-xl" onClick={handleThemeChange}>
           <FaSun
             className={`${
-              isDark ? "translate-y-8" : "translate-y-0"
-            } transition-transform duration-200 absolute text-[#FFA500]`}
+              isDark ? "translate-y-6 opacity-0" : "translate-y-0"
+            } transition-all duration-200 absolute text-[#FFA500]
+            `}
           />
           <FaMoon
             className={`${
-              isDark ? "translate-y-0" : "-translate-y-8"
+              isDark ? "translate-y-0" : "-translate-y-6"
             } transition-transform duration-200 transition-color dark:text-[#D3D3D3]`}
           />
         </button>
